@@ -1,4 +1,4 @@
-package tech.takenoko.kmm_sample.ui.theme
+package tech.takenoko.sample.ui.theme
 
 import android.app.Activity
 import android.os.Build
