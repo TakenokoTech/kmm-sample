@@ -11,13 +11,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import tech.takenoko.kmmlib.ArrWrapper
 import tech.takenoko.sample.ui.theme.KmmsampleTheme
 import tech.takenoko.kmmlib.NdkWrapper
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("MainActivity", "${NdkWrapper().getPlatformName()}")
+        Log.i("MainActivity", "ndk: " + NdkWrapper().platformJson)
+        Log.i("MainActivity", "arr: " + ArrWrapper().platformJson)
         setContent {
             KmmsampleTheme {
                 // A surface container using the 'background' color from the theme

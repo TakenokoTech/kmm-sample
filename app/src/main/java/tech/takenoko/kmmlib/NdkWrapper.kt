@@ -4,6 +4,11 @@ class NdkWrapper {
 
     init { System.loadLibrary("ndklib") }
 
-    external fun getPlatform(): String
-    external fun getPlatformName(): String
+    private external fun wrapPlatform(): String
+    private external fun wrapPlatformName(): String
+    private external fun wrapPlatformJson(): String
+
+    val platform: String get() = wrapPlatform()
+    val platformName: String get() = wrapPlatformName()
+    val platformJson: String get() = wrapPlatformJson()
 }

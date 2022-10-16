@@ -1,10 +1,14 @@
 package tech.takenoko.kmmlib
 
-import platform.UIKit.UIDevice
+//import kotlinx.serialization.encodeToString
+//import kotlinx.serialization.json.Json
 
-class IOSPlatform: Platform {
-    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
+data class IosPlatform(
+    override val name: String
+): Platform {
+    constructor(): this("iOS")
 }
 
-actual fun getPlatform(): Platform = IOSPlatform()
+actual fun getPlatform(): Platform = IosPlatform()
 actual fun getPlatformName(): String = "iOS"
+actual fun getPlatformJson(): String = "" // Json.encodeToString(getPlatform())
