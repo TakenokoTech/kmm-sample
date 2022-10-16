@@ -14,6 +14,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowCompat.getInsetsController
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -55,8 +57,10 @@ fun KmmsampleTheme(
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
-            (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
-            ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
+            (view.context as Activity).window.let { window ->
+                window.statusBarColor = colorScheme.primary.toArgb()
+                getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
+            }
         }
     }
 

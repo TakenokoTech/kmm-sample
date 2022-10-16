@@ -1,7 +1,7 @@
 package tech.takenoko.kmmlib
 
-//import kotlinx.serialization.encodeToString
-//import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 data class IosPlatform(
     override val name: String
@@ -11,4 +11,4 @@ data class IosPlatform(
 
 actual fun getPlatform(): Platform = IosPlatform()
 actual fun getPlatformName(): String = "iOS"
-actual fun getPlatformJson(): String = "" // Json.encodeToString(getPlatform())
+actual fun getPlatformJson(): String = Json.encodeToString(getPlatform())
