@@ -16,7 +16,7 @@ set_property(
         shared
         PROPERTY
         IMPORTED_LOCATION
-        "${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libkmmlib.so"
+        "${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/libnkmmlib.so"
 )
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}")

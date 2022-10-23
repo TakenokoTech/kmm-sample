@@ -1,4 +1,4 @@
-package tech.takenoko.kmmlib
+package tech.takenoko.nkmmlib
 
 data class AndroidNativePlatform(
     override val name: String
@@ -9,7 +9,3 @@ data class AndroidNativePlatform(
 actual fun getPlatform(): Platform = AndroidNativePlatform()
 actual fun getPlatformName(): String = "AndroidNative"
 actual fun getPlatformJson(): String = "{\"name\": \"${getPlatform().name}\"}"
-
-expect fun getPlatform(): Platform
-expect fun getPlatformName(): String
-expect fun getPlatformJson(): String
